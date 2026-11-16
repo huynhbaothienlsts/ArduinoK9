@@ -1,33 +1,27 @@
-# Arduino Smart Home – Khối 9
+# Phòng thí nghiệm Arduino - Khối 9
 
-Website học tập tương tác 5 tuần dành cho học sinh lớp 9. Học sinh có thể học lý thuyết, chạy phòng thí nghiệm ảo, làm trắc nghiệm, lưu tiến độ và in chứng nhận mà không cần phần cứng. Mỗi bài cũng có lộ trình kiểm chứng tùy chọn bằng Grove Smart Home Kit.
+Website học Arduino theo hành trình 7 trạm thực hành, mô phỏng hoàn toàn trên Velxio. Học sinh học theo nhịp **dự đoán - kiểm tra - giải thích**, làm quiz, nộp liên kết mô phỏng, nhận huy hiệu năng lực và in chứng nhận từng bài.
 
-## Chạy trên máy
+## Nội dung
 
-Website không cần cài thư viện. Có thể mở `index.html` trực tiếp, hoặc dùng bất kỳ máy chủ web tĩnh nào nếu trình duyệt hạn chế JavaScript khi mở tệp cục bộ.
+1. Sơ đồ khối và Arduino Uno
+2. Digital Input/Output và `if...else`
+3. Analog Input, PWM và `map()`
+4. Serial Monitor và cảm biến mưa
+5. Khoảng cách và động cơ Servo
+6. Màn hình LCD và thư viện
+7. Dự án Smart Home tổng hợp
 
-## Đưa lên GitHub Pages
+## Tiến độ học tập
 
-1. Tạo repository GitHub và đưa toàn bộ dự án lên nhánh `main`.
-2. Vào **Settings → Pages**.
-3. Trong **Build and deployment**, chọn **GitHub Actions**.
-4. Workflow có sẵn sẽ tự build và xuất bản website.
+Họ tên, lớp, điểm, liên kết bài làm, thử thách và huy hiệu chỉ được lưu trong `localStorage` của trình duyệt với khóa `ash-velxio-v1`. Website không yêu cầu tài khoản và không gửi dữ liệu học sinh đến máy chủ.
 
-## Dữ liệu học sinh
+Điều kiện hoàn thành mỗi trạm được giữ nguyên: quiz đạt ít nhất 70% và có liên kết dự án thuộc `velxio.dev`.
 
-Tên, lớp, nhóm và tiến độ chỉ lưu trong `localStorage` của trình duyệt. Không có dữ liệu nào được gửi lên Internet. Học sinh nên dùng nút **Xuất tiến độ JSON** để sao lưu hoặc nộp cho giáo viên.
+## Chạy cục bộ
 
-## Chỉnh sửa nội dung
+Website không có bước biên dịch. Chạy bằng một máy chủ web tĩnh, sau đó mở `index.html` qua máy chủ đó.
 
-Nội dung 5 bài, câu hỏi và đáp án nằm trong mảng `lessons` ở `src/app.js`. Logic mô phỏng cũng được tổ chức trong tệp này để website có thể chạy mà không cần bước biên dịch.
+## Triển khai
 
-Ngưỡng mặc định:
-
-- Nhiệt độ cảnh báo: trên 25°C.
-- Độ ẩm cảnh báo: dưới 40%.
-- Âm thanh cảnh báo: trên 600.
-- Đèn hành lang: khoảng cách dưới 10 cm.
-
-## Giới hạn
-
-Phiên bản GitHub Pages không có tài khoản hoặc cơ sở dữ liệu tập trung. Chứng nhận được tạo cục bộ cho mục đích học tập, không phải chứng thư có xác thực pháp lý.
+Workflow `.github/workflows/deploy.yml` tự động đưa `index.html` và thư mục `src` lên GitHub Pages khi nhánh `main` có commit mới.
